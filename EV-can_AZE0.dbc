@@ -189,7 +189,7 @@ BO_ 498 x1F2: 8 VCM
  SG_ Keep_SOC_Request : 20|1@1+ (1,0) [0|0] "modemask" Vector__XXX
  SG_ PCS_Connector_Detection : 17|1@1+ (1,0) [0|0] "modemask" Vector__XXX
  SG_ MPRUN : 48|2@1+ (1,0) [0|0] "" Vector__XXX
- SG_ Unknown_498 : 63|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Suspect_DCDC_ON_Cmd : 63|1@1+ (1,0) [0|0] "" Vector__XXX
  SG_ CSUM_498 : 56|4@1+ (1,0) [0|0] "" Vector__XXX
  SG_ VcmMode : 47|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ DcDcConverterReqVoltage : 31|6@0+ (0.1,-10) [0|0] "V" Vector__XXX
@@ -497,7 +497,7 @@ CM_ SG_ 498 Charge_StatusTransitionReqest "CHG_STA_RQ";
 CM_ SG_ 498 Keep_SOC_Request "KEEP_SOC_REQ When the temperature in the battery pack is low outside the timer charge set time, VCM transmists a keep SOC request signal to LBC via CAN. In this case, the battery is not charged, and only battery heater is activated.";
 CM_ SG_ 498 PCS_Connector_Detection "PSCONDET";
 CM_ SG_ 498 MPRUN "Detection of frozen data. Message-PRUN-Diag. The transmitting node adds a message counter of 2bits or more to the end of the last data area (or just before the checksum). The value of the counter, which is initially 0, increments by one everytime new data is transmitted, and returned to zero when reaching the max value. The receiving node lets the first message pass without check, but for second next message and following, it check whether the counter number is different from the previous message.";
-CM_ SG_ 498 Unknown_498 "unknown - may indicate charging";
+CM_ SG_ 498 Suspect_DCDC_ON_Cmd "Suspect - may indicate DCDC ON/OFF command";
 CM_ SG_ 498 CSUM_498 "Checksum. All message nibbles summed together, plus 2. End result in hex is anded with 0xF.";
 CM_ SG_ 498 VcmMode "Unknown values. Consult provides raw data 0-255";
 CM_ BO_ 644 "ABS module relayed via VCM to EV-CAN (20ms)";
